@@ -1,0 +1,57 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Arial', sans-serif;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+  background-color: #ffffff; 
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.app.light {
+  background-color: #ffffff;
+  color: #333;
+}
+
+body.dark {
+  background-color: #1a1a1a;
+  color: #fafafa;
+}
+
+.app.dark {
+  background-color: #1a1a1a;
+  color: #fafafa;
+}
+
+.app {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  background-color: #ffffff; 
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 2rem 1rem;
+  }
+}
