@@ -13,9 +13,7 @@ const CartPage = () => {
     return (
       <div className={`cart-page ${theme}`}>
         <h2>Корзина пуста</h2>
-        <button className="back-to-shop-btn" onClick={() => navigate('/')}>
-          Вернуться на главную
-        </button>
+        <button className="back-to-shop-btn" onClick={() => navigate('/')}>Вернуться на главную</button>
       </div>
     );
   }
@@ -35,26 +33,11 @@ const CartPage = () => {
             </div>
             <div className="cart-item-controls">
               <div className="quantity-controls">
-                <button 
-                  className="quantity-btn" 
-                  onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                >
-                  -
-                </button>
+                <button className="quantity-btn" onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
                 <span className="quantity-display">{item.quantity}</span>
-                <button 
-                  className="quantity-btn" 
-                  onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                >
-                  +
-                </button>
+                <button className="quantity-btn" onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
               </div>
-              <button 
-                className="remove-btn" 
-                onClick={() => removeFromCart(item.id)}
-              >
-                Удалить
-              </button>
+              <button className="remove-btn" onClick={() => removeFromCart(item.id)}>Удалить</button>
             </div>
             <div className="cart-item-total">
               {item.price * item.quantity} ₽
@@ -67,9 +50,7 @@ const CartPage = () => {
           <strong>Итого: {getTotalPrice()} ₽</strong>
         </div>
         <div className="cart-actions">
-          <button className="checkout-btn">
-            Оформить заказ
-          </button>
+          <button className="checkout-btn">Оформить заказ</button>
         </div>
       </div>
     </div>

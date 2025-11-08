@@ -27,17 +27,14 @@ const Dashboard = () => {
 
       <section className="features-section">
         <div className={`feature-card ${theme}`}>
-          <div className="feature-icon">🍖</div>
           <h3 className="feature-title">Натуральные продукты</h3>
           <p>Используем только свежие и качественные ингредиенты</p>
         </div>
         <div className={`feature-card ${theme}`}>
-          <div className="feature-icon">👨‍🍳</div>
           <h3 className="feature-title">Опытные повара</h3>
           <p>Блюда готовят мастера с многолетним опытом</p>
         </div>
         <div className={`feature-card ${theme}`}>
-          <div className="feature-icon">🚚</div>
           <h3 className="feature-title">Быстрая доставка</h3>
           <p>Доставляем заказы в кратчайшие сроки</p>
         </div>
