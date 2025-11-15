@@ -8,6 +8,7 @@ import PickupTypesList from './api-components/PickupTypesList';
 import UsersList from './api-components/UsersList';
 import DishesList from './api-components/DishesList';
 import OrdersList from './api-components/OrdersList';
+import './AdminPanel.css';
 
 const AdminPanel = () => {
     const [activeTab, setActiveTab] = React.useState('orders');
@@ -25,56 +26,24 @@ const AdminPanel = () => {
     ];
 
     return (
-        <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
-            <header style={{ 
-                backgroundColor: '#343a40', 
-                color: 'white', 
-                padding: '20px',
-                marginBottom: '20px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-            }}>
-                <h1 style={{ margin: 0 }}>Панель управления рестораном</h1>
+        <div className="admin-panel">
+            <header className="admin-header">
+                <h1>Панель управления рестораном</h1>
                 <button
                     onClick={() => navigate('/')}
-                    style={{
-                        padding: '10px 20px',
-                        backgroundColor: '#28a745',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                        fontSize: '16px',
-                        fontWeight: '500',
-                        transition: 'background-color 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => e.target.style.backgroundColor = '#218838'}
-                    onMouseLeave={(e) => e.target.style.backgroundColor = '#28a745'}
+                    className="admin-back-btn"
                 >
                     ← На главную
                 </button>
             </header>
 
-            <nav style={{ 
-                backgroundColor: 'white', 
-                padding: '10px 20px',
-                borderBottom: '1px solid #dee2e6',
-                marginBottom: '20px'
-            }}>
-                <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            <nav className="admin-nav">
+                <div className="admin-nav-buttons">
                     {tabs.map(tab => (
                         <button
                             key={tab.key}
                             onClick={() => setActiveTab(tab.key)}
-                            style={{
-                                padding: '8px 16px',
-                                backgroundColor: activeTab === tab.key ? '#007bff' : '#6c757d',
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '4px',
-                                cursor: 'pointer'
-                            }}
+                            className={`admin-tab-btn ${activeTab === tab.key ? 'active' : ''}`}
                         >
                             {tab.label}
                         </button>
@@ -82,7 +51,7 @@ const AdminPanel = () => {
                 </div>
             </nav>
 
-            <main>
+            <main className="admin-main">
                 {tabs.find(tab => tab.key === activeTab)?.component}
             </main>
         </div>
