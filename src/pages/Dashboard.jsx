@@ -20,7 +20,7 @@ const Dashboard = () => {
         <h1 className="hero-title">Араратская долина</h1>
         <p className="hero-subtitle">Насладитесь подлинным вкусом армянской кухни</p>
         <div className="user-welcome">
-          <p>Добро пожаловать, <strong>{user?.name}</strong>!</p>
+          <p>Добро пожаловать, <strong> {user?.first_name} {user?.last_name}</strong>!</p>
         </div>
         <button className="hero-cta" onClick={() => navigate('/menu')}>Посмотреть меню</button>
       </section>

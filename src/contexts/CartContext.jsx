@@ -43,8 +43,22 @@ export const CartProvider = ({ children }) => {
     return cart.reduce((total, item) => total + item.quantity, 0);
   };
 
+  const getItemPrice = (item) => {
+    if (item.discount && item.discount > 0) {
+      return item.price * (1 - item.discount / 100);
+    }
+    return item.price;
+  };
+
   const getTotalPrice = () => {
-    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return cart.reduce((total, item) => {
+      const itemPrice = getItemPrice(item);
+      return total + (itemPrice * item.quantity);
+    }, 0);
+  };
+
+  const clearCart = () => {
+    setCart([]);
   };
 
   return (
@@ -55,6 +69,8 @@ export const CartProvider = ({ children }) => {
       updateQuantity,
       getTotalItems,
       getTotalPrice,
+      getItemPrice,
+      clearCart,
     }}>
       {children}
     </CartContext.Provider>

@@ -32,10 +32,17 @@ const Header = () => {
         <div className="header-controls">
           
           {isAuthenticated ? (
-            <div className="user-menu">
-              <span className="user-greeting">Привет, {user?.name}!</span>
-              <button className="logout-btn" onClick={handleLogout}>Выйти</button>
-            </div>
+            <>
+              {user?.role_title === 'admin' && (
+                <button className="admin-btn" onClick={() => navigate('/admin')}>Админ-панель</button>
+              )}
+              <div className="user-menu">
+                <span className="user-greeting">
+                  Привет, {user?.first_name} {user?.last_name}!
+                </span>
+                <button className="logout-btn" onClick={handleLogout}>Выйти</button>
+              </div>
+            </>
           ) : (
             <button className="login-header-btn" onClick={() => navigate('/login')}>Войти</button>
           )}

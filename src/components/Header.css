@@ -228,6 +228,29 @@
   background: #dc2626;
 }
 
+.admin-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.app-header.dark .admin-btn {
+  background: #5a6268;
+}
+
+.admin-btn:hover {
+  background: #5a6268;
+}
+
+.app-header.dark .admin-btn:hover {
+  background: #495057;
+}
+
 @media (max-width: 768px) {
   .header-content {
     padding: 0 1rem;
